@@ -15,7 +15,7 @@ class _PetviewState extends State<Petview> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    data=petser().getPet();
+    data=petser().getpet();
   }
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +28,8 @@ class _PetviewState extends State<Petview> {
                   itemCount: sshot.data!.length,
                   itemBuilder: (value,index){
                 return Card(
-                  child: Column(
+                  child:
+                  Column(
                     children: [
                       Text(sshot.data![index].petType.toString()),
                       Text(sshot.data![index].petBreed.toString()),
