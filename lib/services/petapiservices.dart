@@ -5,6 +5,31 @@ import 'package:petapp/model/petmodel.dart';
 
 class petser
 {
+  Future<List<Map<String,dynamic>>> getsearch(String searchterm)async
+  {
+      final response = await http.post(
+        Uri.parse(''),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'searchTerm': searchterm}),
+      );
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(response.body);
+        return data.cast<Map<String, dynamic>>();
+      } else {
+        throw Exception('Failed to load data');
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
   Future<dynamic> sentdata(String n1,n2,n3,n4) async
   {
     var client = http.Client();
@@ -44,4 +69,3 @@ class petser
       }
 
   }
-}

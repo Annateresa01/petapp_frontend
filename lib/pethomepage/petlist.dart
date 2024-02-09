@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petapp/pethomepage/petadd.dart';
 import 'package:petapp/pethomepage/petview.dart';
 
 class Petlist extends StatelessWidget {
@@ -14,7 +15,7 @@ class Petlist extends StatelessWidget {
             SizedBox(height: 30,),
             ElevatedButton(onPressed: ()
                 {
-
+Navigator.push(context, MaterialPageRoute(builder: (context)=>Petadd()));
                 }, child: Text("ADD")),
             SizedBox(height: 30,),
             ElevatedButton(onPressed: ()
